@@ -1,0 +1,17 @@
+{
+  "name": "tanygram",
+  "version": "1.0.0",
+  "repository": "https://github.com/yongtany/tanygram",
+  "author": "yongtany <yongn1494@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.17.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
