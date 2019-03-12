@@ -5,14 +5,17 @@
   "author": "yongtany <yongn1494@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "graphql-yoga": "^1.17.4"
+    "graphql-tools": "^4.0.4",
+    "graphql-yoga": "^1.17.4",
+    "merge-graphql-schemas": "^1.5.8",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
-    "dotenv": "^6.2.0"
+    "dotenv": "^6.2.0",
+    "nodemon": "^1.18.10"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node src/server.js"
