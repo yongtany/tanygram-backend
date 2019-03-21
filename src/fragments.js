@@ -21,6 +21,7 @@ export const FULL_POST_FRAGMENT = `
   fragment PostParts on Post {
     id
     caption
+    location
     files {
       ${FILE_FRAGMENT}
     }
