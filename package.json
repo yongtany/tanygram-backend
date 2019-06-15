@@ -5,6 +5,9 @@
   "author": "yongtany <yongn1494@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
+    "copy": "^0.3.2",
     "graphql-tools": "^4.0.4",
     "graphql-yoga": "^1.17.4",
     "jsonwebtoken": "^8.5.0",
@@ -14,11 +17,13 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "prisma": "^1.34.0",
     "prisma-client-lib": "^1.28.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.3.1",
     "dotenv": "^6.2.0",
     "nodemon": "^1.18.10"
@@ -27,6 +32,10 @@
     "deploy": "prisma deploy --force",
     "generate": "prisma generate",
     "prisma": "yarn run deploy && yarn run generate",
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/server.js",
+    "prebuild": "yarn run prisma",
+    "build": "babel src -d build",
+    "postbuild": "cd src && copy ./api/**/*.graphql ../build/api/",
+    "start": "node build/server.js"
   }
 }
